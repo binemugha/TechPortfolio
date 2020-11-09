@@ -1,6 +1,6 @@
 <?php
 
-    if(isset($_POST['submit'])){
+    if(isset($_POST['submit']))
       {
          $UserName = $_POST['name'];
          $Email = $_POST['email'];
@@ -25,6 +25,6 @@
       {
           header("location:index.html");
       }
-    }
+
 
 ?>
