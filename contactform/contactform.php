@@ -26,3 +26,5 @@
           header("location:index.html");
       }
     }
+
+?>
