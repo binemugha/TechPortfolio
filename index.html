@@ -38,10 +38,10 @@
     	ajax.onreadystatechange = function() {
     		if(ajax.readyState == 4 && ajax.status == 200) {
     			if(ajax.responseText == "success"){
-            $("#sendmessage").addClass("show");
-            $("#errormessage").removeClass("show");
-            $('.contactForm').find("input, textarea").val("");
-    				//_("my_form").innerHTML = '<h2>Thanks '+_("n").value+', your message has been sent.</h2>';
+            //$("#sendmessage").addClass("show");
+            //$("#errormessage").removeClass("show");
+            //$('.contactForm').find("input, textarea").val("");
+    				_("my_form").innerHTML = '<h2>Thanks '+_("n").value+', your message has been sent.</h2>';
     			} else {
     				_("status").innerHTML = ajax.responseText;
     				_("mybtn").disabled = false;
