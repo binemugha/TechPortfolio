@@ -27,7 +27,7 @@
     function _(id){ return document.getElementById(id); }
     function submitForm(){
     	_("mybtn").disabled = true;
-    	_("status").innerHTML = 'sending email ...';
+    	//_("status").innerHTML = 'sending email ...';
     	var formdata = new FormData();
     	formdata.append( "name", _("name").value );
     	formdata.append( "email", _("email").value );
@@ -43,7 +43,7 @@
             //$('.contactForm').find("input, textarea").val("");
     				_("my_form").innerHTML = '<h2>Thanks '+_("n").value+', your message has been sent.</h2>';
     			} else {
-    				_("status").innerHTML = ajax.responseText;
+    				//_("status").innerHTML = ajax.responseText;
     				_("mybtn").disabled = false;
     			}
     		}
