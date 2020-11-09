@@ -23,7 +23,34 @@
 
   <!-- Main Stylesheet File -->
   <link href="css/style.css" rel="stylesheet">
-
+  <script>
+    function _(id){ return document.getElementById(id); }
+    function submitForm(){
+    	_("mybtn").disabled = true;
+    	_("status").innerHTML = 'sending email ...';
+    	var formdata = new FormData();
+    	formdata.append( "name", _("name").value );
+    	formdata.append( "email", _("email").value );
+      formdata.append( "subject", _("subject").value );
+    	formdata.append( "message", _("message").value );
+    	var ajax = new XMLHttpRequest();
+    	ajax.open( "POST", "contactform.php" );
+    	ajax.onreadystatechange = function() {
+    		if(ajax.readyState == 4 && ajax.status == 200) {
+    			if(ajax.responseText == "success"){
+            $("#sendmessage").addClass("show");
+            $("#errormessage").removeClass("show");
+            $('.contactForm').find("input, textarea").val("");
+    				//_("my_form").innerHTML = '<h2>Thanks '+_("n").value+', your message has been sent.</h2>';
+    			} else {
+    				_("status").innerHTML = ajax.responseText;
+    				_("mybtn").disabled = false;
+    			}
+    		}
+    	}
+    	ajax.send( formdata );
+    }
+</script>
 
 </head>
 
@@ -500,7 +527,7 @@
                     </h5>
                   </div>
                   <div>
-                      <form action="" method="post" role="form" class="contactForm" action ="contactform.php">
+                      <form id="my_form" onsubmit="submitForm(); return false;" action="" method="post" role="form" class="contactForm" action ="contactform.php">
                       <div id="sendmessage">Your message has been sent. Thank you!</div>
                       <div id="errormessage"></div>
                       <div class="row">
@@ -529,7 +556,7 @@
                           </div>
                         </div>
                         <div class="col-md-12">
-                          <button type="submit" class="button button-a button-big button-rouded" name="submit">Send Message</button>
+                          <button id="mybtn" type="submit" class="button button-a button-big button-rouded" name="submit" value="Submit Form">Send Message<span id="status"></span></button>
                         </div>
                       </div>
                     </form>

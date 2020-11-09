@@ -1,33 +1,20 @@
 <?php
-
-    if(isset($_POST['submit']))
-      {
-         $UserName = $_POST['name'];
-         $Email = $_POST['email'];
-         $Subject = $_POST['subject'];
-         $Msg = $_POST['message'];
-
-         if(empty($UserName) || empty($Email) || empty($Subject) || empty($Msg))
-         {
-             header('location:index.php?error');
-         }
-         else
-         {
-             $to = "bennyblasco@gmail.com";
-             $from = $Email
-
-             if(mail($to,$Subject,$Msg,$Email))
-             {
-                 echo "success"
-                 header("location:index.html?success");
-             }
-         }
-      }
-      else
-      {
-          echo "error: Failure to send message"
-          header("location:index.html");
-      }
-
-
+if( isset($_POST['name']) && isset($_POST['email'])  && isset($_POST['subject']) && isset($_POST['message']) ){
+	$name = $_POST['name']; // HINT: use preg_replace() to filter the data
+	$email = $_POST['email'];
+  $subject = $_POST['subject'];
+	$message = nl2br($_POST['message']);
+	$to = "bennyblasco@gmail.com";
+	$from = $email;
+	$subject = 'Contact Form TechFolio';
+	$message = '<p>'.$message.'</p>';
+	$headers = "From: $from\n";
+	$headers .= "MIME-Version: 1.0\n";
+	$headers .= "Content-type: text/html; charset=iso-8859-1\n";
+	if( mail($to, $subject, $message, $headers) ){
+		echo "success";
+	} else {
+		echo "The server failed to send the message. Please try again later.";
+	}
+}
 ?>
