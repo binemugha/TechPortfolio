@@ -14,15 +14,18 @@
          else
          {
              $to = "bennyblasco@gmail.com";
+             $from = $Email
 
              if(mail($to,$Subject,$Msg,$Email))
              {
+                 echo "success"
                  header("location:index.html?success");
              }
          }
       }
       else
       {
+          echo "error: Failure to send message"
           header("location:index.html");
       }
 
