@@ -83,10 +83,8 @@ a:hover {
 }
 
 .bg-image {
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center center;
+
+
 }
 
 .overlay-mf {
@@ -612,14 +610,13 @@ a:hover {
 }
 
 .intro .overlay-itro {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: black;
   position: absolute;
   top: 0;
   left: 0px;
   padding: 0;
   height: 100%;
   width: 100%;
-  opacity: .9;
 }
 
 .intro .intro-title {
@@ -670,7 +667,9 @@ a:hover {
 /*======================================
 //--//-->   ABOUT
 ======================================*/
-
+.about-mf{
+  background-color: black;
+}
 .about-mf .box-shadow-full {
   padding-top: 4rem;
   padding-bottom: 4rem;
