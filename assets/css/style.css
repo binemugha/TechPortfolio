@@ -791,6 +791,29 @@ section .container {
   bottom: 15px;
   right: 15px;
 }
+.portfolio .portfolio-wrap .portfolio-description {
+  padding: 30px 20px;
+  background: rgba(0, 0, 0, 0.6);
+  border: 2px solid #fff;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.portfolio .portfolio-wrap .portfolio-description h4 {
+  color: #18d26e;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.portfolio .portfolio-wrap .portfolio-description p {
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+  text-align: center;
+}
 
 /*--------------------------------------------------------------
 # Portfolio Details
