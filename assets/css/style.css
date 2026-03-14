@@ -161,6 +161,13 @@ section {
   height: 320px;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(41, 151, 255, 0.16), transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-shell > * {
+  position: relative;
+  z-index: 1;
 }
 
 .hero-shell h1 {
